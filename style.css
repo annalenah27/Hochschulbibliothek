@@ -1,0 +1,534 @@
+:root {
+  --primary: #213A8F;
+  --accent: #f9a826;
+  --background: #ffffff;
+  --text: #000000;
+  --text-muted: #444444;
+  --card-shadow: rgba(0, 0, 0, 0.08);
+  --font-headline: 'Quicksand', sans-serif;
+  --font-body: 'Fira Sans', 'Fira Sans Condensed', system-ui, sans-serif;
+  --max-width: 960px;
+}
+
+/* === RESET === */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* === BODY === */
+body {
+  font-family: var(--font-body);
+  background-color: var(--background);
+  color: var(--text);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* === HEADER === */
+header {
+  background-color: var(--primary);
+  color: white;
+  padding: 2.5rem 1rem;
+  border-bottom: 4px solid var(--accent);
+  text-align: center;
+}
+
+header h1 {
+  font-family: var(--font-headline);
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.subline {
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  margin-top: 0.5rem;
+}
+
+/* === MAIN === */
+main.hochschule {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+/* === INTRO === */
+.intro {
+  text-align: center;
+}
+
+.intro h2 {
+  font-family: var(--font-headline);
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+  color: var(--primary);
+}
+
+.intro p {
+  color: var(--text-muted);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === SUCHBOX FORMULAR NEU STRUKTURIERT === */
+.suchbox-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Suchtfeld nimmt möglichst viel Platz ein */
+.searchbar {
+  display: flex;
+  border: 2px solid var(--primary);
+  border-radius: 10px;
+  background: white;
+  overflow: hidden;
+}
+
+.searchbar input[type="text"] {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  font-size: 1.1rem;
+  border: none;
+}
+
+.search-button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: flex-end;
+}
+
+/* Erweiterte Suche Button klar rechts außen */
+.advanced-toggle {
+  font-size: 1rem;
+  padding: 0.6rem 1.25rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  background: transparent;
+  color: var(--primary);
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s ease;
+  margin-bottom: 2rem;
+}
+
+.advanced-toggle:hover,
+.advanced-toggle:focus {
+  background-color: var(--primary);
+  color: white;
+}
+/* Abstand zwischen den Suchabschnitten */
+.advanced-search {
+  background: #f9f9f9;
+  padding: 1.5rem 1.75rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* statt 0.1 oder höher */
+  margin-bottom: 3rem; /* mehr Luft unten */
+  margin-top: 2rem;
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.filter-form label {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.2rem;
+}
+
+.filter-form input[type="text"] {
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Checkboxen: einheitlich links mit Text */
+.genre-row {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding-left: 0;
+}
+
+.checkbox-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  gap: 0.5rem;
+}
+
+
+/* Buttons unten */
+.form-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+button[type="submit"],
+.reset-button {
+  font-size: 1rem;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+}
+
+.reset-button {
+  background: white;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.reset-button:hover {
+  background: var(--primary);
+  color: white;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.form-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-col label {
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.form-col input[type="text"] {
+  padding: 0.6rem 0.75rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+
+
+/* === Responsive Anpassung === */
+@media (max-width: 600px) {
+  .filter-form {
+    grid-template-columns: 1fr;
+  }
+
+  .filter-form label {
+    justify-self: start;
+  }
+
+  .checkbox-group {
+    padding-left: 0;
+  }
+
+  .form-buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
+
+
+/* === ERGEBNISSE === */
+.ergebnisse {
+  border-top: 1px solid #ddd;
+  padding-top: 2rem;
+  text-align: center;
+  font-style: italic;
+  color: var(--text-muted);
+}
+
+/* === FOOTER === */
+footer {
+  background: #f0f0f0;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 4rem;
+}
+
+footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 600px) {
+  .form-buttons,
+  .checkbox-group {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+.result-card {
+  background: white;
+  border-left: 5px solid var(--primary);
+  padding: 1.2rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px var(--card-shadow);
+  margin-bottom: 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.result-card:hover {
+  transform: translateY(-2px);
+}
+
+.result-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--primary);
+  text-decoration: none;
+  font-family: var(--font-headline);
+}
+
+.result-title:hover {
+  text-decoration: underline;
+}
+
+.zurueck-button {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.zurueck-button:hover,
+.zurueck-button:focus {
+  background: var(--primary);
+  color: white;
+}
+
+.ausleihe-formular {
+  margin-top: 3rem;
+  padding: 2rem;
+  border-top: 2px solid var(--primary);
+}
+
+.ausleihe-formular h3 {
+  color: var(--primary);
+  font-family: var(--font-headline);
+  margin-bottom: 1rem;
+}
+
+.ausleihe-formular form {
+  display: grid;
+  gap: 1rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.ausleihe-formular label {
+  font-weight: bold;
+  color: var(--text);
+}
+
+.ausleihe-formular input,
+.ausleihe-formular textarea {
+  padding: 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+.ausleihe-formular button {
+  background-color: var(--primary);
+  color: white;
+  padding: 0.75rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.ausleihe-formular button:hover {
+  background-color: #2f49af;
+}
+
+.modal {
+  display: none; /* Versteckt beim Laden */
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  padding: 2rem;
+  position: relative;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal.show {
+  display: flex;
+}
+
+.modal-content h3 {
+  font-family: var(--font-headline);
+  color: var(--primary);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.modal-content form {
+  display: grid;
+  gap: 1rem;
+}
+
+.modal-content label {
+  font-weight: bold;
+}
+
+.modal-content input,
+.modal-content textarea {
+  padding: 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+.modal-content button[type="submit"] {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-button {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: transparent;
+  font-size: 1.5rem;
+  border: none;
+  color: var(--primary);
+  cursor: pointer;
+}
+
+.ausleihe-button {
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.96); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+
+
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+  width: 100%;
+}
+
+footer {
+  background: #2f49af;
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.9rem;
+  color: white;
+  border-top: 1px solid #ddd;
+}
+
+footer a {
+  color: #ffffff; /* oder z. B. #dde3ff für etwas heller */
+  text-decoration: none;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
+
+
+
+
+  
+  
+  
+

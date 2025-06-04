@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fachbibliothek – Hochschulzugang</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="datenbank.js"></script>
+  <script defer src="hochschule.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Quicksand:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <h1>Fachbibliothek</h1>
+      <p class="subline">Koodinierungsstelle Chancengleichheit Sachsen</p>
+    </div>
+  </header>
+
+  <main class="hochschule">
+    <section class="intro" aria-labelledby="welcome-heading">
+      <h2 id="welcome-heading">Willkommen!</h2>
+      <p>
+        In unserer digitalen Fachbibliothek können Sie gezielt nach wissenschaftlicher Literatur suchen und sich diese ausleihen.
+        Nutzen Sie das untenstehende Formular zur Recherche nach Autor, Titel, Medium oder Genre.
+      </p>
+    </section>
+
+    <section class="suchbox">
+      <!-- Suchleiste + Button + Erweiterte Suche Button unter der Lupe -->
+      <form id="simpleSearchForm" class="suchbox-form" role="search">
+        <div class="searchbar">
+          <input
+            type="text"
+            placeholder="Suche im Katalog nach Autor, Titel, Nummer ..."
+            aria-label="Suche"
+            name="query"
+          />
+          <button type="submit" class="search-button" aria-label="Suche ausführen">
+            🔍
+          </button>
+        </div>
+        <div class="button-wrapper">
+          <button type="button" class="advanced-toggle" id="toggleAdvancedButton">
+            Erweiterte Suche
+          </button>
+        </div>
+      </form>      
+
+<!-- Erweiterte Suche -->
+<div class="advanced-search" id="advancedSearch" hidden>
+  <form id="advancedForm" class="filter-form">
+    
+    <div class="form-row">
+      <div class="form-col">
+        <label for="autor">Autor</label>
+        <input type="text" id="autor" name="autor" />
+      </div>
+      <div class="form-col">
+        <label for="titel">Titel</label>
+        <input type="text" id="titel" name="titel" />
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-col">
+        <label for="isbn">ISBN</label>
+        <input type="text" id="isbn" name="isbn" />
+      </div>
+      <div class="form-col">
+        <label for="verlag">Verlag</label>
+        <input type="text" id="verlag" name="verlag" />
+      </div>
+    </div>
+
+    <div class="form-row genre-row">
+      <label>Genre</label>
+      <div class="checkbox-group">
+        <label class="checkbox-item">
+          <input type="checkbox" name="genre" value="belletristik" />
+          <span>Belletristik</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="genre" value="jugend" />
+          <span>Kinder- und Jugendliteratur</span>
+        </label>
+        <label class="checkbox-item">
+          <input type="checkbox" name="genre" value="sachliteratur" />
+          <span>Sachliteratur</span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-buttons">
+      <button type="submit">Suche starten</button>
+      <button type="reset" class="reset-button">Felder leeren</button>
+    </div>
+  </form>
+</div>
+
+
+    <section class="ergebnisse" id="ergebnisse" aria-live="polite">
+      <div id="ergebnisContainer"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2025 Fachbibliothek Chancengleichheit Sachsen |
+      <a href="#">Barrierefreiheit</a> |
+      <a href="#">Kontakt</a>
+    </p>
+  </footer>
+</body>
+</html>
+
+
+
+
+
